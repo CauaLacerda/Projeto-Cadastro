@@ -19,7 +19,7 @@ function CadastroProduto() {
         if (produtos == null) produtos = [];
         else produtos = JSON.parse(produtos);
 
-        produtos.push(NovoProduto); // Adiciona um novo produto
+        produtos.push(NovoProduto);
         localStorage.setItem("produtos", JSON.stringify(produtos));
         alert("O produto foi cadastrado com sucesso");
         location.reload();
@@ -57,10 +57,9 @@ function listarProdutos() {
 //Função limpar produtos
 function limparProdutos() {
     if (typeof(Storage) !== "undefined") {
-        // Remove os produtos do localStorage
         localStorage.removeItem("produtos");
 
-        // Limpa o conteúdo visual (HTML) da lista na tela
+
         let produtosContainer = document.getElementById("produtosContainer");
         produtosContainer.innerHTML = "";
 
