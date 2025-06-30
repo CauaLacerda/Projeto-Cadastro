@@ -13,6 +13,12 @@ body{
     max-width: 50%;
 }
 
+.botao-cadastro{
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+
 h3{
     padding-left: 10px;
 }
