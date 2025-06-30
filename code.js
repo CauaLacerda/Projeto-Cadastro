@@ -34,7 +34,6 @@ function listarProdutos() {
     if (typeof(Storage) !== "undefined") {
         let produtos = localStorage.getItem("produtos");
         let produtosContainer = document.getElementById("produtosContainer");
-        produtosContainer.innerHTML = "<h1>Lista de Produtos:</h1>";
 
         if (produtos == null) {
             produtosContainer.innerHTML += "<h3>Nenhum produto foi cadastrado</h3>";
@@ -42,11 +41,11 @@ function listarProdutos() {
             produtos = JSON.parse(produtos);
             produtos.forEach(produto => {
                 produtosContainer.innerHTML += `
-                    <ul class="list-group">
-                        <li class="list-group-item">Nome do produto: ${produto.NomeProduto}</li>
-                        <li class="list-group-item">Descrição do produto: ${produto.DescProduto}</li>
-                        <li class="list-group-item">Valor do produto: ${"R$"+produto.ValorProduto}</li>
-                        <li class="list-group-item">Produto Disponível? ${produto.Disponivel}</li>
+                    <ul class="list-group cor-azul">
+                        <li class="list-group-item cor-azul roboto">Nome do produto: ${produto.NomeProduto}</li>
+                        <li class="list-group-item cor-azul roboto">Descrição do produto: ${produto.DescProduto}</li>
+                        <li class="list-group-item cor-azul roboto">Valor do produto: ${"R$"+produto.ValorProduto}</li>
+                        <li class="list-group-item cor-azul roboto">Produto Disponível? ${produto.Disponivel}</li>
                     </ul>`;
             });
         }
@@ -54,6 +53,23 @@ function listarProdutos() {
         alert("A versão do seu navegador é muito antiga. Por isso, não será possível visualizar o estoque!");
     }
 }
+
+//Função limpar produtos
+function limparProdutos() {
+    if (typeof(Storage) !== "undefined") {
+        // Remove os produtos do localStorage
+        localStorage.removeItem("produtos");
+
+        // Limpa o conteúdo visual (HTML) da lista na tela
+        let produtosContainer = document.getElementById("produtosContainer");
+        produtosContainer.innerHTML = "";
+
+        alert("Todos os produtos foram removidos com sucesso!");
+    } else {
+        alert("A versão do seu navegador é muito antiga. Por isso, não será possível limpar o estoque!");
+    }
+}
+
 window.onload = function() {
     listarProdutos();
 };

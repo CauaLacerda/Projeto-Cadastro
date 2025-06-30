@@ -1,5 +1,5 @@
 
-body{
+.cor-azul{
     background-color: azure;
 }
 
@@ -11,14 +11,35 @@ body{
 .botao{
     margin-left: 10px;
     max-width: 50%;
+    margin-left:25%;
 }
 
 .botao-cadastro{
     border-radius: 20px;
-    margin-left: 10px;
+    margin-left: 48%;
 }
 
+.botao-novoCad{
+    border-radius: 20px;
+    margin-left: 34%;
+
+}
+
+.navbar{
+    margin-left:40%;
+}
 
 h3{
     padding-left: 10px;
 }
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:100px ;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
